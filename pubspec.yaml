@@ -84,11 +84,20 @@ dependencies:
   rename: ^3.0.2
   rating_dialog: ^2.0.4
   drop_down_list: ^0.0.8
-  file_picker: 8.1.4
+  file_picker: ^8.1.7
   googleapis: ^13.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/playstore.png"
+  adaptive_icon_background: "assets/playstore.png"
+  adaptive_icon_foreground: "assets/playstore.png"
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

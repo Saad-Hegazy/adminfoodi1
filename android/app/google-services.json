@@ -7,9 +7,47 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:836519579068:android:0e5114b655afaccf9fafb9",
+        "mobilesdk_app_id": "1:836519579068:android:e8338f66d8a138b29fafb9",
         "android_client_info": {
-          "package_name": "com.examp"
+          "package_name": "com.adminfoodi1.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnDha73sa2FmGmbiugrdqCnGrVFd_xuqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836519579068:android:85da9998c5e29b4c9fafb9",
+        "android_client_info": {
+          "package_name": "com.delivery.foodi1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnDha73sa2FmGmbiugrdqCnGrVFd_xuqg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836519579068:android:700a43d218a567c09fafb9",
+        "android_client_info": {
+          "package_name": "com.example.adminfoodi1"
         }
       },
       "oauth_client": [],
