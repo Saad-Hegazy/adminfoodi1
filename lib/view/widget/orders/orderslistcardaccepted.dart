@@ -47,7 +47,7 @@ class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
                       Get.toNamed(AppRoute.ordersdetails,
                           arguments: {"ordersmodel": listdata});
                     },
-                    color: AppColor.thirdColor,
+                    color: AppColor.primaryColor,
                     textColor: AppColor.secondColor,
                     child: const Text("Details"),
                   ),
@@ -60,7 +60,7 @@ class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
                           listdata.ordersType.toString(),
                       );
                     },
-                    color: AppColor.thirdColor,
+                    color: AppColor.primaryColor,
                     textColor: AppColor.secondColor,
                     child: const Text("Start Delivered"),
                   )

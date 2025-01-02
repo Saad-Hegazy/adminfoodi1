@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 import '../../../controller/orders/pending_controller.dart';
 import '../../../core/constant/color.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +46,7 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                        Get.toNamed(AppRoute.ordersdetails,
                           arguments: {"ordersmodel": listdata});
                     },
-                    color: AppColor.thirdColor,
+                    color: AppColor.primaryColor,
                     textColor: AppColor.secondColor,
                     child: const Text("Details"),
                   ),
@@ -59,7 +58,7 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                          listdata.ordersUsersid.toString(),
                        );
                     },
-                    color: AppColor.thirdColor,
+                    color: AppColor.primaryColor,
                     textColor: AppColor.secondColor,
                     child: const Text("Approve"),
                   )

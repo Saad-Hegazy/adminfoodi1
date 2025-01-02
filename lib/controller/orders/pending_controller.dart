@@ -64,7 +64,7 @@ class OrdersPendingController extends GetxController {
     getOrders();
   }
 
-  approveOrders(String userid,String ordersid) async {
+  approveOrders(String ordersid,String userid ) async {
     data.clear();
     statusRequest = StatusRequest.loading;
     update();
@@ -72,7 +72,7 @@ class OrdersPendingController extends GetxController {
       ordersid,
       userid,
     );
-    print("=============================== OrdersPendingController $response ");
+    print("=============================== OrdersPendingApproveController $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
