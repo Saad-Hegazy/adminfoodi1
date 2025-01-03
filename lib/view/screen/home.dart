@@ -69,6 +69,14 @@ class HomePage extends StatelessWidget {
 
                         },
                       ),
+                      CardAdminHome(
+                        url: AppImageAsset.imageslider,
+                        title: 'Image Slider',
+                        onClick: () {
+                          Get.toNamed(AppRoute.imagesliderview);
+
+                        },
+                      ),
                     ],)
 
                 ],

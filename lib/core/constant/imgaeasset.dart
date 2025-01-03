@@ -29,5 +29,6 @@ class AppImageAsset {
   static const String deliveryImage = "$rootImages/005-delivery-man.png" ;
   static const String deliveryImage2 = "$rootImages/006-delivery.png" ;
   static const String settingsImage = "$rootImages/settingsimage.png" ;
+  static const String imageslider = "$rootImages/imageslider.png" ;
 
 }

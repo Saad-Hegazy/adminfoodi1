@@ -7,6 +7,7 @@ class AppLink {
   static const String imagestCategories = "$imageststatic/categories";
   static const String imagestItems = "$imageststatic/items";
   static const String imagestOrders = "$imageststatic/orders";
+  static const String imageSlider = "$imageststatic/imageSlider";
 // =============================================================
   static const String notification = "$serverMain/notification.php";
 // ================================= Auth ========================== //
@@ -53,6 +54,10 @@ class AppLink {
   static const String addAdmin = "$server/users/addadmin.php";
   static const String deleteDelivery = "$server/users/deletedelivery.php";
   static const String deleteadmin = "$server/users/deleteadmin.php";
+// ================================= Imageslider ========================== //
+  static const String imagesliderview = "$server/imageslider/imagesliderview.php";
+  static const String imageslideradd = "$server/imageslider/imageslideradd.php";
+  static const String imagesliderdelete = "$server/imageslider/imagesliderdelete.php";
 
 
 }

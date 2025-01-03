@@ -7,6 +7,8 @@ import 'package:adminfoodi1/view/screen/categories/add.dart';
 import 'package:adminfoodi1/view/screen/categories/edit.dart';
 import 'package:adminfoodi1/view/screen/categories/view.dart';
 import 'package:adminfoodi1/view/screen/home.dart';
+import 'package:adminfoodi1/view/screen/imageslider/imageslideradd.dart';
+import 'package:adminfoodi1/view/screen/imageslider/imagesliderview.dart';
 import 'package:adminfoodi1/view/screen/items/add.dart';
 import 'package:adminfoodi1/view/screen/items/edit.dart';
 import 'package:adminfoodi1/view/screen/items/view.dart';
@@ -60,5 +62,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.deliveryView, page: () => const DeliveryView()),
   GetPage(name: AppRoute.addAdmin, page: () => const AddAdmin()),
   GetPage(name: AppRoute.adddelivery, page: () => const AddDelivery()),
+  // ================================= ImageSlider ========================== //
+  GetPage(name: AppRoute.imagesliderview, page: () => const ImageSliderView()),
+  GetPage(name: AppRoute.imageslideradd, page: () => const ImageSliderAdd()),
 
 ];

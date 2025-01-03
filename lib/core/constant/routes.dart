@@ -30,6 +30,9 @@ class AppRoute {
   static const String deliveryView = "/deliveryView";
   static const String addAdmin = "/addAdmin";
   static const String adddelivery = "/adddelivery";
+//Imageslider
+  static const String imagesliderview = "/imagesliderview";
+  static const String imageslideradd = "/imageslideradd";
 
 
 }
