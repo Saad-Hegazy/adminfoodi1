@@ -18,7 +18,6 @@ class AppImageAsset {
   static const String server = "$rootLottie/server.json";
 
   static const String avatar = "$rootImages/avatar.png" ;
-  static const String delivery = "$rootImages/delivery.png" ;
   static const String order = "$rootImages/order.png" ;
   static const String product = "$rootImages/product.png" ;
   static const String message = "$rootImages/message.png" ;

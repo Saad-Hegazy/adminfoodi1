@@ -46,13 +46,4 @@ class AppLink {
   static const String itemsadd = "$server/items/add.php";
   static const String itemsedit = "$server/items/edit.php";
   static const String itemsdelete = "$server/items/delete.php";
-// ================================= Users ========================== //
-  static const String viewadmin = "$server/users/viewadmin.php";
-  static const String viewdelivery = "$server/users/viewdelivery.php";
-  static const String addDelivery = "$server/users/adddelivery.php";
-  static const String addAdmin = "$server/users/addadmin.php";
-  static const String deleteDelivery = "$server/users/deletedelivery.php";
-  static const String deleteadmin = "$server/users/deleteadmin.php";
-
-
 }

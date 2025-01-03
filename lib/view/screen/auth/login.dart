@@ -17,9 +17,10 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     LoginControllerImp controller = Get.put(LoginControllerImp());
     return Scaffold(
+      backgroundColor: AppColor.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColor.primaryColor,
+        backgroundColor: AppColor.backgroundcolor,
         elevation: 0.0,
         title: Text('Sign In',
             style: Theme.of(context)
@@ -64,7 +65,7 @@ class Login extends StatelessWidget {
                     },
                     mycontroller: controller.password,
                     hinttext: "13".tr,
-                    iconData: Icons.remove_red_eye_outlined,
+                    iconData: Icons.lock_outline,
                     labeltext: "19".tr,
                     // mycontroller: ,
                   ),

@@ -19,10 +19,6 @@ import 'package:adminfoodi1/view/screen/orders/onthewayorderdetails.dart';
 import 'package:adminfoodi1/view/screen/orders/pending.dart';
 import 'package:adminfoodi1/view/screen/orders/screen.dart';
 import 'package:adminfoodi1/view/screen/settings.dart';
-import 'package:adminfoodi1/view/screen/users/addadmin.dart';
-import 'package:adminfoodi1/view/screen/users/adddelivery.dart';
-import 'package:adminfoodi1/view/screen/users/adminView.dart';
-import 'package:adminfoodi1/view/screen/users/deliveryView.dart';
 import 'package:get/get.dart';
 import 'core/constant/routes.dart';
 import 'core/middleware/mymiddleware.dart';
@@ -55,10 +51,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.orderswithdeliveryView, page: () => const OrderswithdeliveryView()),
   GetPage(name: AppRoute.onthewayordersdetails, page: () => const OnTheWayOrdersDetails()),
   GetPage(name: AppRoute.settings, page: () => const Settings()),
-  // ================================= Users ========================== //
-  GetPage(name: AppRoute.adminView, page: () => const AdminView()),
-  GetPage(name: AppRoute.deliveryView, page: () => const DeliveryView()),
-  GetPage(name: AppRoute.addAdmin, page: () => const AddAdmin()),
-  GetPage(name: AppRoute.adddelivery, page: () => const AddDelivery()),
 
 ];
