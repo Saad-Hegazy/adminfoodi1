@@ -40,9 +40,18 @@ class HomePage extends StatelessWidget {
                         },
                       ),
                       CardAdminHome(
+                        url: AppImageAsset.delivery,
+                        title: 'Delivery',
+                        onClick: () {
+                          Get.toNamed(AppRoute.deliveryView);
+                        },
+                      ),
+                      CardAdminHome(
                         url: AppImageAsset.avatar,
-                        title: 'Users',
-                        onClick: () {  },
+                        title: 'Admin',
+                        onClick: () {
+                          Get.toNamed(AppRoute.adminView);
+                        },
                       ),
                       CardAdminHome(
                         url: AppImageAsset.order,

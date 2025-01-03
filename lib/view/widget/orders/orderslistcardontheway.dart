@@ -57,7 +57,7 @@ class CardOrdersListOnTheWay extends GetView<OnTheWayOrdersController> {
                         Get.toNamed(AppRoute.onthewayordersdetails,
                            arguments: {"ordersmodel": listdata});
                       },
-                      color: AppColor.thirdColor,
+                      color: AppColor.primaryColor,
                       textColor: AppColor.secondColor,
                       child: const Text("Details"),
                     ),

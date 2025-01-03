@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../controller/orders/accepted_controller.dart';
+import '../../../controller/orders/ontheway_controller.dart';
 import '../../../controller/orders/order_screen_controller.dart';
+import '../../../controller/orders/pending_controller.dart';
 import '../home/custombuttonappbar.dart';
 
 class CustomBottomAppBarHome extends StatelessWidget {
@@ -20,6 +23,20 @@ class CustomBottomAppBarHome extends StatelessWidget {
                                                icondata: controller.bottomappbar[index]['icon'],
                                                onPressed: () {
                           controller.changePage(index);
+                          switch(index){
+                            case 0:
+                              OrdersPendingController controller = Get.put(OrdersPendingController());
+                              controller.refrehOrder();
+                              break;
+                            case 1:
+                              OrdersAcceptedController controller = Get.put(OrdersAcceptedController());
+                              controller.refrehOrder();
+                              break;
+                            case 2:
+                              OnTheWayOrdersController controller = Get.put(OnTheWayOrdersController());
+                              controller.refrehOrder();
+                              break;
+                          }
                           },
                           active: controller.currentpage == index ? true : false),
                        );

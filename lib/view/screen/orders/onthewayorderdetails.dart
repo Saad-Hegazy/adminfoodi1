@@ -13,7 +13,6 @@ class OnTheWayOrdersDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     OrdersDetailsController controller = Get.put(OrdersDetailsController());
     return Scaffold(
-      backgroundColor: AppColor.backgroundcolor,
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: AppColor.primaryColor,
@@ -112,7 +111,7 @@ class OnTheWayOrdersDetails extends StatelessWidget {
                         markers: controller.markers.toSet(),
                         initialCameraPosition: controller.cameraPosition!,
                         onMapCreated: (GoogleMapController controllermap) {
-                          controller.completercontroller!
+                          controller.completercontroller
                               .complete(controllermap);
                         },
                       ),

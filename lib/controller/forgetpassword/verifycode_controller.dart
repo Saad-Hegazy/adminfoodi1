@@ -41,6 +41,9 @@ class VerifyCodeControllerImp extends VerifyCodeController {
     update();
   }
 
+  reSend(){
+    verifyCodeForgetPasswordData.resendData(email!);
+  }
   @override
   void onInit() {
     email = Get.arguments['email'];
