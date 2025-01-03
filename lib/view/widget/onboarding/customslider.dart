@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import '../../../controller/onboarding_controller.dart';
 import '../../../core/constant/color.dart';
@@ -17,7 +18,7 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
         itemCount: onBoardingList.length,
         itemBuilder: (context, i) => Column(
           children: [
-            Image.asset(
+            SvgPicture.asset(
               onBoardingList[i].image!,
               // width: ,
               height: Get.width / 1.3,
