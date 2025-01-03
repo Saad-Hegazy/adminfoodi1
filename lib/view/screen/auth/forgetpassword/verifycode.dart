@@ -53,6 +53,11 @@ class VerfiyCode extends StatelessWidget {
             }, // end onSubmit
           ),
           const SizedBox(height: 40),
+          InkWell(onTap: (){
+            controller.reSend() ;
+          }, child: const Center(child: Text("Resend verfiy code" , style: TextStyle(color: AppColor.primaryColor , fontSize: 20 ),)),)
+
+
         ]),
       ),
     );

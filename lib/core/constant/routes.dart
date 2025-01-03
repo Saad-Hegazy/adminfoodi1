@@ -9,6 +9,7 @@ class AppRoute {
   static const String homepage = "/homepage";
   static const String ordersPending = "/ordersPending";
   static const String ordersaccepted = "/ordersaccepted";
+
   //Orders
   static const String ordersdetails = "/ordersdetails";
   static const String onthewayordersdetails = "/onthewayordersdetails";
@@ -24,7 +25,11 @@ class AppRoute {
   static const String itemsedit = "/itemsedit";
   //Settings
   static const String settings = "/settings";
-
+  //Users
+  static const String adminView = "/adminView";
+  static const String deliveryView = "/deliveryView";
+  static const String addAdmin = "/addAdmin";
+  static const String adddelivery = "/adddelivery";
 
 
 }
