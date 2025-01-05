@@ -6,6 +6,8 @@ import 'package:adminfoodi1/view/screen/auth/login.dart';
 import 'package:adminfoodi1/view/screen/categories/add.dart';
 import 'package:adminfoodi1/view/screen/categories/edit.dart';
 import 'package:adminfoodi1/view/screen/categories/view.dart';
+import 'package:adminfoodi1/view/screen/coupon/coupon_add.dart';
+import 'package:adminfoodi1/view/screen/coupon/coupon_view.dart';
 import 'package:adminfoodi1/view/screen/home.dart';
 import 'package:adminfoodi1/view/screen/imageslider/imageslideradd.dart';
 import 'package:adminfoodi1/view/screen/imageslider/imagesliderview.dart';
@@ -65,5 +67,8 @@ List<GetPage<dynamic>>? routes = [
   // ================================= ImageSlider ========================== //
   GetPage(name: AppRoute.imagesliderview, page: () => const ImageSliderView()),
   GetPage(name: AppRoute.imageslideradd, page: () => const ImageSliderAdd()),
+  // ================================= Coupons ========================== //
+  GetPage(name: AppRoute.couponsView, page: () => const CouponView()),
+  GetPage(name: AppRoute.couponsAdd, page: () =>  CouponAdd()),
 
 ];

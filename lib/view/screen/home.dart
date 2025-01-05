@@ -58,15 +58,6 @@ class HomePage extends StatelessWidget {
                         title: 'Orders',
                         onClick: () {
                           Get.toNamed(AppRoute.ordersScreen);
-
-                        },
-                      ),
-                      CardAdminHome(
-                        url: AppImageAsset.settingsImage,
-                        title: 'Settings',
-                        onClick: () {
-                          Get.toNamed(AppRoute.settings);
-
                         },
                       ),
                       CardAdminHome(
@@ -74,7 +65,20 @@ class HomePage extends StatelessWidget {
                         title: 'Image Slider',
                         onClick: () {
                           Get.toNamed(AppRoute.imagesliderview);
-
+                        },
+                      ),
+                      CardAdminHome(
+                        url: AppImageAsset.couponimage,
+                        title: 'Coupons',
+                        onClick: () {
+                          Get.toNamed(AppRoute.couponsView);
+                        },
+                      ),
+                      CardAdminHome(
+                        url: AppImageAsset.settingsImage,
+                        title: 'Settings',
+                        onClick: () {
+                          Get.toNamed(AppRoute.settings);
                         },
                       ),
                     ],)

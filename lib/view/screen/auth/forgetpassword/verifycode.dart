@@ -17,7 +17,7 @@ class VerfiyCode extends StatelessWidget {
       backgroundColor: AppColor.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
+        backgroundColor: AppColor.primaryColor,
         elevation: 0.0,
         title: Text('Verification Code',
             style: Theme.of(context)

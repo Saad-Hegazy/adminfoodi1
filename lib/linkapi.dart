@@ -58,6 +58,10 @@ class AppLink {
   static const String imagesliderview = "$server/imageslider/imagesliderview.php";
   static const String imageslideradd = "$server/imageslider/imageslideradd.php";
   static const String imagesliderdelete = "$server/imageslider/imagesliderdelete.php";
+// ================================= Coupons ========================== //
+  static const String couponView = "$server/coupon/view.php";
+  static const String couponAdd = "$server/coupon/add.php";
+  static const String couponDelete = "$server/coupon/delete.php";
 
 
 }

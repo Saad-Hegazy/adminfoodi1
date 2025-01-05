@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import '../../../core/class/crud.dart';
-import '../../../linkapi.dart';
+import '../../../../core/class/crud.dart';
+import '../../../../linkapi.dart';
 class ImageSliderData{
   Crud crud;
   ImageSliderData(this.crud);

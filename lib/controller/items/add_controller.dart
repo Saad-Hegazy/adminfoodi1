@@ -153,5 +153,21 @@ class  ItemsAddController extends GetxController{
     dropdownid =TextEditingController();
     super.onInit();
   }
-
+  @override
+  void dispose() {
+    name.dispose();
+    namear.dispose();
+    desc.dispose();
+    desc_ar.dispose();
+    count.dispose();
+    price.dispose();
+    priceForMerchant.dispose();
+    priceForMosque.dispose();
+    discount.dispose();
+    discountForMerchant.dispose();
+    discountForMosque.dispose();
+    dropdownname.dispose();
+    dropdownid.dispose();
+    super.dispose();
+  }
 }

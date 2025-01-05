@@ -33,6 +33,8 @@ class AppRoute {
 //Imageslider
   static const String imagesliderview = "/imagesliderview";
   static const String imageslideradd = "/imageslideradd";
-
+//Coupons
+  static const String couponsView = "/couponsView";
+  static const String couponsAdd = "/couponsAdd";
 
 }

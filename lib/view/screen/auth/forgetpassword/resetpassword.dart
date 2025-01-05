@@ -19,7 +19,7 @@ class ResetPassword extends StatelessWidget {
       backgroundColor: AppColor.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
+        backgroundColor: AppColor.primaryColor,
         elevation: 0.0,
         title: Text('ResetPassword',
             style: Theme.of(context)

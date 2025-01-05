@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 import '../../core/class/statusrequest.dart';
 import '../../core/functions/handingdatacontroller.dart';
+import '../../data/datasource/remote/coupon_data.dart';
 import '../../data/datasource/remote/imageslider_data.dart';
 
-class  ImageSliderController extends GetxController{
+class  CouponViewController extends GetxController{
 
-  ImageSliderData  imageSliderData = ImageSliderData(Get.find());
+  CouponData  couponData = CouponData(Get.find());
 
   List data = [];
 
@@ -13,20 +14,20 @@ class  ImageSliderController extends GetxController{
   getData()async{
     data.clear();
     statusRequest=StatusRequest.loading;
-    var response = await imageSliderData.get();
-    print("=============== ImageSliderController $response");
+    var response = await couponData.get();
+    print("=============== CouponViewController $response");
     statusRequest = handlingData(response);
     if(StatusRequest.success == statusRequest){
       if(response['status']=="success"){
-         data = response['data'];
+        data = response['data'];
       }else{
         statusRequest = StatusRequest.failure;
       }
     }
     update();
   }
-  deleteImageSlider(String id, String imagename){
-    imageSliderData.delete({"id": id, "ImageSlidername": imagename,});
+  deletecoupon(String couponid){
+    couponData.delete({"couponid": couponid});
     refreshData();
     update();
   }

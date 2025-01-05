@@ -19,12 +19,12 @@ class Language extends GetView<LocaleController> {
             children: [
               Text("1".tr, style: Theme.of(context).textTheme.displayLarge),
               const SizedBox(height: 20),
-              CustomButtonLang(
-                  textbutton: "Ar",
-                  onPressed: () {
-                    controller.changeLang("ar");
-                    Get.toNamed(AppRoute.onBoarding) ;
-                  }),
+              // CustomButtonLang(
+              //     textbutton: "Ar",
+              //     onPressed: () {
+              //       controller.changeLang("ar");
+              //       Get.toNamed(AppRoute.onBoarding) ;
+              //     }),
               CustomButtonLang(
                   textbutton: "En",
                   onPressed: () {

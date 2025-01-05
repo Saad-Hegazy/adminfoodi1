@@ -5,10 +5,7 @@ import 'package:adminfoodi1/core/shared/customtextformglobal.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-
 import '../../../controller/categories/add_controller.dart';
-import '../../../core/functions/uploadfile.dart';
 import '../../../core/shared/custombutton.dart';
 class CategoriesAdd extends StatelessWidget {
   const CategoriesAdd({super.key});

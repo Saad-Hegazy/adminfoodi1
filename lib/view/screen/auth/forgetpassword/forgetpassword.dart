@@ -18,7 +18,7 @@ class ForgetPassword extends StatelessWidget {
       backgroundColor: AppColor.backgroundcolor,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: AppColor.backgroundcolor,
+        backgroundColor: AppColor.primaryColor,
         elevation: 0.0,
         title: Text('14'.tr,
             style: Theme.of(context)

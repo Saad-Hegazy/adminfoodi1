@@ -18,10 +18,21 @@ class CustomSliderOnBoarding extends GetView<OnBoardingControllerImp> {
         itemCount: onBoardingList.length,
         itemBuilder: (context, i) => Column(
           children: [
+            const SizedBox(
+              height: 10,
+            ),
+            Text(onBoardingList[i].title!,
+              style:const TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 20,  color:AppColor.black,
+              ),
+            ),
+            const SizedBox(
+              height: 80,
+            ),
             SvgPicture.asset(
               onBoardingList[i].image!,
               // width: ,
-              height: Get.width / 1.3,
+              height: Get.width / 1.5,
               fit: BoxFit.fill,
             ),
             const SizedBox(height: 60),
