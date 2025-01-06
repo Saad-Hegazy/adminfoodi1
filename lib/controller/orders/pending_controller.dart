@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../../core/class/statusrequest.dart';
 import '../../core/functions/handingdatacontroller.dart';
@@ -10,7 +11,10 @@ class OrdersPendingController extends GetxController {
   OrdersPendingData ordersPendingData = OrdersPendingData(Get.find());
   List<OrdersModel> data = [];
   late StatusRequest statusRequest;
+  int? adddeliveryprice ;
   MyServices myServices = Get.find();
+  late TextEditingController pricedelivery;
+  bool removebutton =false;
 
   String printOrderType(int val) {
     if (val == 0) {
@@ -61,22 +65,25 @@ class OrdersPendingController extends GetxController {
     update();
   }
   refrehOrder() {
+    pricedelivery.clear();
     getOrders();
   }
 
-  approveOrders(String ordersid,String userid ) async {
+  approveOrders(String ordersid,String userid,String pricedelivery ) async {
     data.clear();
     statusRequest = StatusRequest.loading;
     update();
     var response = await ordersPendingData.approveOrder(
       ordersid,
       userid,
+      pricedelivery
     );
     print("=============================== OrdersPendingApproveController $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       // Start backend
       if (response['status'] == "success") {
+        removebutton=false;
         refrehOrder();
       } else {
         statusRequest = StatusRequest.failure;
@@ -85,11 +92,22 @@ class OrdersPendingController extends GetxController {
     }
     update();
   }
-
+  addpricedelivery(int? ordersid){
+    adddeliveryprice=ordersid;
+    removebutton=true;
+    update();
+  }
 
   @override
   void onInit() {
     getOrders();
+    pricedelivery =TextEditingController();
+
     super.onInit();
+  }
+  @override
+  void dispose() {
+    pricedelivery.dispose();
+    super.dispose();
   }
 }
