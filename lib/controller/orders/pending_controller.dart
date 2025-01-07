@@ -69,14 +69,15 @@ class OrdersPendingController extends GetxController {
     getOrders();
   }
 
-  approveOrders(String ordersid,String userid,String pricedelivery ) async {
+  approveOrders(String ordersid,String userid,String pricedelivery , String totalprice) async {
     data.clear();
     statusRequest = StatusRequest.loading;
     update();
     var response = await ordersPendingData.approveOrder(
       ordersid,
       userid,
-      pricedelivery
+      pricedelivery,
+      totalprice
     );
     print("=============================== OrdersPendingApproveController $response ");
     statusRequest = handlingData(response);

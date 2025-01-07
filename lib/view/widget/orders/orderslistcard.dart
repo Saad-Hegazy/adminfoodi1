@@ -79,7 +79,8 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                        controller.approveOrders(
                          listdata.ordersId.toString(),
                          listdata.ordersUsersid.toString(),
-                         controlle.pricedelivery.text
+                         controlle.pricedelivery.text,
+                         listdata.ordersTotalprice.toString()
                        );
                     },
                     color: AppColor.primaryColor,

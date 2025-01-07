@@ -8,11 +8,12 @@ class OrdersPendingData {
     var response = await crud.postData(AppLink.viewpendingOrders, {});
     return response.fold((l) => l, (r) => r);
   }
-  approveOrder(String ordersid,String userid, String pricedelivery) async {
+  approveOrder(String ordersid,String userid, String pricedelivery, String totalprice ) async {
     var response = await crud.postData(AppLink.approveOrders, {
       "ordersid": ordersid,
       "usersid":userid,
       "pricedelivery":pricedelivery,
+      "orderstotalprice" :totalprice,
     });
     return response.fold((l) => l, (r) => r);
   }
