@@ -3,53 +3,54 @@ import 'package:get/get.dart';
 import '../../controller/notification_controller.dart';
 import '../../core/class/handlingdataview.dart';
 import '../../core/constant/color.dart';
-class NotificationView extends StatelessWidget {
-  const NotificationView({super.key});
-
+import '../../core/functions/validinput.dart';
+import '../../core/shared/custombutton.dart';
+import '../../core/shared/customtextformglobal.dart';
+import '../widget/notifications/chooserecipient.dart';
+class SendNotifications extends StatelessWidget {
+  const SendNotifications({super.key});
   @override
   Widget build(BuildContext context) {
-    Get.put(NotificationController());
-    return Container(
-      child: GetBuilder<NotificationController>(
-          builder: (controller) => HandlingDataView(
-              statusRequest: controller.statusRequest,
-              widget: Container(
-                  padding: const EdgeInsets.all(10),
-                  child: ListView(children: [
-                    Center(
-                        child: Text(
-                          "54".tr,
-                          style: TextStyle(
-                              fontSize: 18,
-                              color: AppColor.primaryColor,
-                              fontWeight: FontWeight.bold),
-                        )),
-                    const SizedBox(height: 10),
-                    ...List.generate(
-                        controller.data.length,
-                            (index) => Container(
-                          margin: const EdgeInsets.symmetric(vertical: 5),
-                          child: Stack(
-                            children: [
-                              ListTile(
-                                title: Text(controller.data[index]
-                                ['notification_title']),
-                                subtitle: Text(controller.data[index]
-                                ['notification_body']),
-                              ),
-                              Positioned(
-                                  right: 5,
-                                  top: -10,
-                                  child: Text(
-                                    controller.data[index]['notification_datetime'],
-                                    style:const TextStyle(
-                                        color: AppColor.primaryColor,
-                                        fontWeight: FontWeight.bold),
-                                  ))
-                            ],
-                          ),
-                        ))
-                  ])))),
+    NotificationController controlle =Get.put(NotificationController()) ;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Send Notification"),
+      ),
+      body: GetBuilder<NotificationController>(builder: (controller)=> HandlingDataView(
+          statusRequest: controller.statusRequest!, widget: Container(
+        padding: EdgeInsets.all(10),
+        child: Form(
+          key: controller.formState ,
+          child: ListView(
+            children: [
+              CustomTextFormGlobal(
+                  hinttext: "Add title",
+                  labeltext: "title",
+                  iconData: Icons.title,
+                  mycontroller: controlle.title,
+                  valid: (val){
+                    return validInput(val!, 1, 200, "");
+                  },
+                  isNumber: false),
+              CustomTextFormGlobal(
+                  hinttext:  "message",
+                  labeltext: "message",
+                  iconData: Icons.message,
+                  mycontroller:  controlle.message,
+                  valid:  (val){
+                    return validInput(val!, 1, 200, "");
+                  },
+                  isNumber: false),
+              chooseRecipient(notificationController: controller,),
+              CustomButton(text: "Send",
+                onPressed: (){
+                  controlle.sendNotification();
+                },
+              )
+            ],
+          ),
+        ),
+      ))),
     );
   }
 }

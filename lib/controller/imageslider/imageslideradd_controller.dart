@@ -9,7 +9,6 @@ import '../../data/datasource/remote/imageslider_data.dart';
 import 'imagesliderview_controller.dart';
 
 class  AddImageSliderController extends GetxController{
-
   ImageSliderData  imageSliderData = ImageSliderData(Get.find());
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   StatusRequest? statusRequest = StatusRequest.none ;

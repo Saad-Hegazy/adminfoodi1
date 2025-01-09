@@ -3,15 +3,12 @@ import 'package:adminfoodi1/core/constant/color.dart';
 import 'package:adminfoodi1/core/functions/validinput.dart';
 import 'package:adminfoodi1/core/shared/customtextformglobal.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import '../../../controller/categories/add_controller.dart';
 import '../../../controller/imageslider/imageslideradd_controller.dart';
 import '../../../core/shared/custombutton.dart';
 import '../../widget/imageslider/chooseusershowingimage.dart';
 class ImageSliderAdd extends StatelessWidget {
   const ImageSliderAdd({super.key});
-
   @override
   Widget build(BuildContext context) {
     AddImageSliderController controlle =Get.put(AddImageSliderController()) ;

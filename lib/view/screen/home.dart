@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
                       ),
                       CardAdminHome(
                         url: AppImageAsset.Notifications,
-                        title: 'Notifications',
+                        title: 'Send Notifications',
                         onClick: () {
                           Get.toNamed(AppRoute.notifications);
                         },

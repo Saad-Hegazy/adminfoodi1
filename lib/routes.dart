@@ -71,6 +71,6 @@ List<GetPage<dynamic>>? routes = [
   // ================================= Coupons ========================== //
   GetPage(name: AppRoute.couponsView, page: () => const CouponView()),
   GetPage(name: AppRoute.couponsAdd, page: () =>  CouponAdd()),
-  GetPage(name: AppRoute.notifications, page: () =>  NotificationView()),
+  GetPage(name: AppRoute.notifications, page: () =>  SendNotifications()),
 
 ];

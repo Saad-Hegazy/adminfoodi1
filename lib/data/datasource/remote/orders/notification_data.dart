@@ -4,8 +4,12 @@ import '../../../../linkapi.dart';
 class NotificationData {
   Crud crud;
   NotificationData(this.crud);
-  getData(String id) async {
-    var response = await crud.postData(AppLink.notification, {"id": id});
+  sendNotification(String title,String message,String topic) async {
+    var response = await crud.postData(AppLink.notification, {
+      "title": title,
+      "message": message,
+      "topic": topic,
+    });
     return response.fold((l) => l, (r) => r);
   }
 }

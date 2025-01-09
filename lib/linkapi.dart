@@ -9,7 +9,7 @@ class AppLink {
   static const String imagestOrders = "$imageststatic/orders";
   static const String imageSlider = "$imageststatic/imageSlider";
 // =============================================================
-  static const String notification = "$serverMain/notification.php";
+  static const String notification = "$server/sendnotifications.php";
 // ================================= Auth ========================== //
   static const String login = "$server/auth/login.php";
   static const String verifycodessignup = "$server/auth/verfiycode.php";
