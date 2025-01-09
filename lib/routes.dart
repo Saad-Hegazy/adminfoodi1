@@ -15,6 +15,7 @@ import 'package:adminfoodi1/view/screen/items/add.dart';
 import 'package:adminfoodi1/view/screen/items/edit.dart';
 import 'package:adminfoodi1/view/screen/items/view.dart';
 import 'package:adminfoodi1/view/screen/language.dart';
+import 'package:adminfoodi1/view/screen/notification.dart';
 import 'package:adminfoodi1/view/screen/onboarding.dart';
 import 'package:adminfoodi1/view/screen/orders/accepted.dart';
 import 'package:adminfoodi1/view/screen/orders/ontheway.dart';
@@ -70,5 +71,6 @@ List<GetPage<dynamic>>? routes = [
   // ================================= Coupons ========================== //
   GetPage(name: AppRoute.couponsView, page: () => const CouponView()),
   GetPage(name: AppRoute.couponsAdd, page: () =>  CouponAdd()),
+  GetPage(name: AppRoute.notifications, page: () =>  NotificationView()),
 
 ];

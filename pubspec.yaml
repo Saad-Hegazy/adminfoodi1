@@ -86,6 +86,8 @@ dependencies:
   drop_down_list: ^0.0.8
   file_picker: ^8.1.7
   googleapis: ^13.2.0
+  app_settings: ^5.1.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

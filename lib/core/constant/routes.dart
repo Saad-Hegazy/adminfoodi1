@@ -25,6 +25,8 @@ class AppRoute {
   static const String itemsedit = "/itemsedit";
   //Settings
   static const String settings = "/settings";
+  //Notifications
+  static const String notifications = "/notifications";
   //Users
   static const String adminView = "/adminView";
   static const String deliveryView = "/deliveryView";
