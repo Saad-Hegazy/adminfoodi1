@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../view/screen/home.dart';
 import '../../view/screen/orders/accepted.dart';
 import '../../view/screen/orders/ontheway.dart';
+import '../../view/screen/orders/orderscompletedView.dart';
 import '../../view/screen/orders/pending.dart';
 
 
@@ -22,7 +23,7 @@ class OrderScreenControllerImp extends OrderScreenController {
 
   List bottomappbar = [
     {"title": "Pending", "icon": Icons.present_to_all},
-    {"title": "Accepted", "icon": Icons.done_all_outlined},
+    {"title": "Accepted", "icon": Icons.done},
     {"title": "On the way", "icon": Icons.delivery_dining_outlined},
   ];
 

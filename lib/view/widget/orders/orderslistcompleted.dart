@@ -1,14 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:get/get.dart';
-import '../../../controller/orders/ontheway_controller.dart';
 import '../../../controller/orders/orderscompletedView_controller.dart';
 import '../../../core/constant/color.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constant/routes.dart';
 import '../../../data/model/ordersmodel.dart';
-class CardOrdersListOnTheWay extends GetView<OnTheWayOrdersController> {
+import '../../../linkapi.dart';
+class CardOrdersListCompleted extends GetView<OrderscompletedViewController> {
   final OrdersModel listdata;
 
-  const CardOrdersListOnTheWay({Key? key, required this.listdata})
+  const CardOrdersListCompleted({Key? key, required this.listdata})
       : super(key: key);
 
   @override
@@ -45,18 +46,28 @@ class CardOrdersListOnTheWay extends GetView<OnTheWayOrdersController> {
                   "Order Status : ${controller.printOrderStatus(listdata.ordersStatus!)} "),
               const Divider(),
 
-                  Text("Total Price : ${listdata.ordersTotalprice!.toStringAsFixed(2)} \S\A\R ",
-                      style: const TextStyle(
-                          color: AppColor.primaryColor,
-                          fontWeight: FontWeight.bold)),
+              Text("Total Price : ${listdata.ordersTotalprice!.toStringAsFixed(2)} \S\A\R ",
+                  style: const TextStyle(
+                      color: AppColor.primaryColor,
+                      fontWeight: FontWeight.bold)),
+              const Divider(),
+              Text(
+                  "Order rating : ${listdata.ordersNoterating!} "),
+              Text(
+                  "Number of stars : ${listdata.ordersRating!} "),
+              CachedNetworkImage(
+                imageUrl: AppLink.imagestOrders + "/" + listdata.ordersdoneimage!,
+                height: 150,
+                width: 250,
+              ),
               Row(
                 children: [
                   const Spacer(),
-                  if (listdata.ordersStatus! == 3)
+                  if (listdata.ordersStatus! == 4)
                     MaterialButton(
                       onPressed: () {
                         Get.toNamed(AppRoute.onthewayordersdetails,
-                           arguments: {"ordersmodel": listdata});
+                            arguments: {"ordersmodel": listdata});
                       },
                       color: AppColor.primaryColor,
                       textColor: AppColor.secondColor,

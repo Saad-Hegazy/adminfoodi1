@@ -44,7 +44,8 @@ class CustomTextFormGlobal extends StatelessWidget {
                 child: Text(labeltext)),
             suffixIcon: InkWell(child: Icon(iconData), onTap: onTapIcon),
             border:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(30))),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(30))
+        ),
       ),
     );
   }

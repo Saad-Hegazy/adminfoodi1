@@ -6,9 +6,10 @@ class AppImageAsset {
   static const String onBoardingImageTwo    = "$rootImages/two.svg" ;
   static const String onBoardingImageThree  = "$rootImages/three.svg" ;
 
-  static const String saleOne    = "$rootImages/001-sale.png";
-  static const String saleTwo    = "$rootImages/002-sale-tag.png";
-  static const String saleThree  = "$rootImages/003-sale-1.png";
+
+  static const String orderscompleted  = "$rootImages/orderscompleted.png" ;
+
+
 
 
   static const String ecommerce = "$rootLottie/ecommerce.json";

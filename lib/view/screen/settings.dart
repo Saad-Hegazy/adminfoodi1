@@ -47,6 +47,13 @@ class Settings extends StatelessWidget {
                   title: const Text("Contact with developer"),
                 ),
                 ListTile(
+                  onTap: () async{
+                    await  launch("https://wa.me/37044837");
+                  },
+                  trailing: const Icon(Icons.message),
+                  title:  Text("Contact us whatsapp "),
+                ),
+                ListTile(
                   onTap: () {
                     controller.logout();
                   },

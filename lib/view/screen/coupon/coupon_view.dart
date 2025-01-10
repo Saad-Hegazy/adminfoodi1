@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../controller/coupon/couponview_controller.dart';
@@ -36,7 +35,7 @@ class CouponView extends StatelessWidget {
                               child:
                               Container(
                                 padding: EdgeInsets.all(10),
-                                child: Text(controller.data[index]["coupon_name"]),
+                                child: Text(controller.data[index]["coupon_name"] +"\n" + controller.data[index]["coupon_discount"].toString() + "% " ),
                               )),
                             Expanded(
                                 flex:4,

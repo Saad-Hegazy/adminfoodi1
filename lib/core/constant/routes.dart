@@ -15,6 +15,7 @@ class AppRoute {
   static const String onthewayordersdetails = "/onthewayordersdetails";
   static const String ordersScreen = "/ordersScreen";
   static const String orderswithdeliveryView = "/orderswithdeliveryView";
+  static const String orderscompletedView = "/orderscompletedView";
   //categories
   static const String categoriesview = "/categories";
   static const String categoriesadd = "/categoriesadd";
