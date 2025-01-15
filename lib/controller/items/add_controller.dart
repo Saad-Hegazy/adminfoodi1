@@ -25,6 +25,7 @@ class  ItemsAddController extends GetxController{
   late TextEditingController desc;
   late TextEditingController desc_ar;
   late TextEditingController count;
+  late TextEditingController quantityinboxnt;
   late TextEditingController price;
   late TextEditingController priceForMerchant;
   late TextEditingController priceForMosque;
@@ -46,6 +47,7 @@ class  ItemsAddController extends GetxController{
       "desc":desc.text,
       "descar":desc_ar.text,
       "count":count.text,
+      "quantityinboxnt":quantityinboxnt.text,
       "price":price.text,
       "pricemerchant":priceForMerchant.text,
       "pricemosque":priceForMosque.text,
@@ -141,6 +143,7 @@ class  ItemsAddController extends GetxController{
     desc =TextEditingController();
     desc_ar =TextEditingController();
     count =TextEditingController();
+    quantityinboxnt =TextEditingController();
     price =TextEditingController();
     priceForMerchant =TextEditingController();
     priceForMosque =TextEditingController();
@@ -160,6 +163,7 @@ class  ItemsAddController extends GetxController{
     desc.dispose();
     desc_ar.dispose();
     count.dispose();
+    quantityinboxnt.dispose();
     price.dispose();
     priceForMerchant.dispose();
     priceForMosque.dispose();

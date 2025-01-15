@@ -25,6 +25,7 @@ class  ItemEditController extends GetxController{
   late TextEditingController desc;
   late TextEditingController desc_ar;
   late TextEditingController count;
+  late TextEditingController quantityinboxnt;
   late TextEditingController price;
   late TextEditingController priceForMerchant;
   late TextEditingController priceForMosque;
@@ -61,6 +62,7 @@ class  ItemEditController extends GetxController{
         "desc":desc.text,
         "descar":desc_ar.text,
         "count":count.text,
+        "quantityinboxnt":quantityinboxnt.text,
         "price":price.text,
         "pricemerchant":priceForMerchant.text,
         "pricemosque":priceForMosque.text,
@@ -151,6 +153,7 @@ class  ItemEditController extends GetxController{
     desc =TextEditingController();
     desc_ar =TextEditingController();
     count =TextEditingController();
+    quantityinboxnt =TextEditingController();
     price =TextEditingController();
     priceForMerchant =TextEditingController();
     priceForMosque =TextEditingController();
@@ -164,6 +167,7 @@ class  ItemEditController extends GetxController{
     desc.text=itemsModel!.itemsDesc!;
     desc_ar.text=itemsModel!.itemsDescAr!;
     count.text=itemsModel!.itemsCount!.toString();
+    quantityinboxnt.text=itemsModel!.itemsquantityinbox!.toString();
     price.text=itemsModel!.itemsPrice!.toString();
     priceForMerchant.text=itemsModel!.itemsPriceMerchant!.toString();
     priceForMosque.text=itemsModel!.itemsPriceMosque!.toString();
@@ -176,5 +180,23 @@ class  ItemEditController extends GetxController{
     dropdownid =TextEditingController();
     active = itemsModel!.itemsActive.toString();
     super.onInit();
+  }
+  @override
+  void dispose() {
+    name.dispose();
+    namear.dispose();
+    desc.dispose();
+    desc_ar.dispose();
+    count.dispose();
+    quantityinboxnt.dispose();
+    price.dispose();
+    priceForMerchant.dispose();
+    priceForMosque.dispose();
+    discount.dispose();
+    discountForMerchant.dispose();
+    discountForMosque.dispose();
+    dropdownname.dispose();
+    dropdownid.dispose();
+    super.dispose();
   }
 }

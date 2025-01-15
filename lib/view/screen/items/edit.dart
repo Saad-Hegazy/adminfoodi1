@@ -70,6 +70,15 @@ class ItemsEdit extends StatelessWidget {
                   },
                   isNumber: true),
               CustomTextFormGlobal(
+                  hinttext: "Quantity in box",
+                  labeltext: "Quantity",
+                  iconData: Icons.category,
+                  mycontroller: controlle.quantityinboxnt,
+                  valid: (val){
+                    return validInput(val!, 1, 100, "");
+                  },
+                  isNumber: true),
+              CustomTextFormGlobal(
                   hinttext:  "price",
                   labeltext: "price",
                   iconData: Icons.category,
