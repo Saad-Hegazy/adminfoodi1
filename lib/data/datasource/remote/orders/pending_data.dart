@@ -17,4 +17,11 @@ class OrdersPendingData {
     });
     return response.fold((l) => l, (r) => r);
   }
+  delete(String orderid,String userid) async{
+    var response = await crud.postData(AppLink.cancelorder,
+        {"orderid": orderid,
+        "userid":userid
+        });
+    return  response.fold((l)=>l,(r)=>r);
+  }
 }

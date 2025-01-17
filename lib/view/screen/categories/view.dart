@@ -2,6 +2,7 @@ import 'package:adminfoodi1/controller/categories/view_controller.dart';
 import 'package:adminfoodi1/core/class/handlingdataview.dart';
 import 'package:adminfoodi1/core/constant/routes.dart';
 import 'package:adminfoodi1/linkapi.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -42,9 +43,9 @@ class CategoriesView extends StatelessWidget {
                         child:
                           Container(
                             padding: EdgeInsets.all(4),
-                            child: SvgPicture.network(
+                            child: CachedNetworkImage(
                               height: 80,
-                                "${AppLink.imagestCategories}/${controller.data[index].categoriesImage}" ),
+                              imageUrl: "${AppLink.imagestCategories}/${controller.data[index].categoriesImage}", ),
                           )),
                           Expanded(
                               flex:3,

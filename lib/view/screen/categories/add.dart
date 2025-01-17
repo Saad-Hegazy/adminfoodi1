@@ -46,12 +46,12 @@ class CategoriesAdd extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: MaterialButton(
-                  color: AppColor.thirdColor,
+                  color: AppColor.primaryColor,
                   textColor: AppColor.secondColor,
                   onPressed: (){
                     controlle.chooseImage();
                   },child:
-                Text("Choose Categorie Image"),),
+                Text("Choose Categorie Image",style: TextStyle(color: Colors.white),),),
               ),
               if(controlle.file !=null)
                 SvgPicture.file(controlle.file!),

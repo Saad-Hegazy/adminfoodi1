@@ -66,6 +66,24 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                   const Spacer(),
                   MaterialButton(
                     onPressed: () {
+                      Get.defaultDialog(
+                          title: "warning",
+                          middleText: "are you sure from canceling this order",
+                          onCancel: (){},
+                          onWillPop:null,
+                          onConfirm:(){
+                            controlle.cancelorder(listdata.ordersId.toString(), listdata.ordersUsersid.toString());
+                            Get.back();
+                          }
+                      );
+                    },
+                    color: AppColor.primaryColor,
+                    textColor: AppColor.secondColor,
+                    child: const Text("Cancel"),
+                  ),
+                  SizedBox(width: 3),
+                  MaterialButton(
+                    onPressed: () {
                        Get.toNamed(AppRoute.ordersdetails,
                           arguments: {"ordersmodel": listdata});
                     },
@@ -79,7 +97,7 @@ class CardOrdersList extends GetView<OrdersPendingController> {
                        controller.approveOrders(
                          listdata.ordersId.toString(),
                          listdata.ordersUsersid.toString(),
-                         controlle.pricedelivery.text,
+                           listdata.ordersType==1?"0":  controlle.pricedelivery.text,
                          listdata.ordersTotalprice.toString()
                        );
                     },

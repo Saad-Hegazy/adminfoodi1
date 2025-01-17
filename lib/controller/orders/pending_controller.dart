@@ -93,6 +93,12 @@ class OrdersPendingController extends GetxController {
     }
     update();
   }
+  cancelorder(String orderid,String userid){
+    ordersPendingData.delete(orderid , userid);
+    data.removeWhere((element)=> element.ordersId == orderid);
+    refrehOrder();
+    update();
+  }
   addpricedelivery(int? ordersid){
     adddeliveryprice=ordersid;
     removebutton=true;

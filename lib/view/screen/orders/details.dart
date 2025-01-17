@@ -55,8 +55,8 @@ class OrdersDetails extends StatelessWidget {
                                       (index) => TableRow(children: [
                                     Text("${controller.data[index].itemsName}",
                                         textAlign: TextAlign.center),
-                                    Text("${controller.data[index].countitems}", textAlign: TextAlign.center),
-                                    Text("${controller.getPrice(controller.data[index]).toStringAsFixed(2)}",
+                                    Text("${controller.data[index].countitems} ${ controller.data[index].cartitemisbox.toString()==1? "Box":"Unit"} ", textAlign: TextAlign.center),
+                                    Text("${controller.data[index].cartitemisbox.toString()==1?controller.data[index].cartitemprice!.toInt() * controller.data[index].itemsquantityinbox!.toInt() : controller.data[index].cartitemprice!.toStringAsFixed(2)}",
                                         textAlign: TextAlign.center),
                                   ]))
                             ],

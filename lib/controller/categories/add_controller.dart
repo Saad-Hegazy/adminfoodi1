@@ -17,7 +17,7 @@ class  CategorieAddController extends GetxController{
   late TextEditingController namear;
   File? file;
   chooseImage()async{
-    file = await fileUploadGallery(true);
+    file = await fileUploadGallery(false);
     update();
 
   }

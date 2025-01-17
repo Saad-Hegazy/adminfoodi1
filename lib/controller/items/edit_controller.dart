@@ -26,6 +26,9 @@ class  ItemEditController extends GetxController{
   late TextEditingController desc_ar;
   late TextEditingController count;
   late TextEditingController quantityinboxnt;
+  late TextEditingController pricrofbox;
+  late TextEditingController pricrofboxmerchant;
+  late TextEditingController pricrofboxmosque;
   late TextEditingController price;
   late TextEditingController priceForMerchant;
   late TextEditingController priceForMosque;
@@ -63,6 +66,9 @@ class  ItemEditController extends GetxController{
         "descar":desc_ar.text,
         "count":count.text,
         "quantityinboxnt":quantityinboxnt.text,
+        "pricrofbox":pricrofbox.text,
+        "pricrofboxmerchant":pricrofboxmerchant.text,
+        "pricrofboxmosque":pricrofboxmosque.text,
         "price":price.text,
         "pricemerchant":priceForMerchant.text,
         "pricemosque":priceForMosque.text,
@@ -155,6 +161,11 @@ class  ItemEditController extends GetxController{
     count =TextEditingController();
     quantityinboxnt =TextEditingController();
     price =TextEditingController();
+
+    pricrofbox =TextEditingController();
+    pricrofboxmerchant =TextEditingController();
+    pricrofboxmosque =TextEditingController();
+
     priceForMerchant =TextEditingController();
     priceForMosque =TextEditingController();
     discount =TextEditingController();
@@ -168,6 +179,11 @@ class  ItemEditController extends GetxController{
     desc_ar.text=itemsModel!.itemsDescAr!;
     count.text=itemsModel!.itemsCount!.toString();
     quantityinboxnt.text=itemsModel!.itemsquantityinbox!.toString();
+
+    pricrofbox.text=itemsModel!.itemspricrofbox!.toString();
+    pricrofboxmerchant.text=itemsModel!.itemspricrofboxmerchant!.toString();
+    pricrofboxmosque.text=itemsModel!.itemspricrofboxmosque!.toString();
+
     price.text=itemsModel!.itemsPrice!.toString();
     priceForMerchant.text=itemsModel!.itemsPriceMerchant!.toString();
     priceForMosque.text=itemsModel!.itemsPriceMosque!.toString();
@@ -190,6 +206,11 @@ class  ItemEditController extends GetxController{
     count.dispose();
     quantityinboxnt.dispose();
     price.dispose();
+
+    pricrofbox.dispose();
+    pricrofboxmerchant.dispose();
+    pricrofboxmosque.dispose();
+
     priceForMerchant.dispose();
     priceForMosque.dispose();
     discount.dispose();

@@ -19,7 +19,7 @@ class  CategorieEditController extends GetxController{
   CategoriesModel?  categoriesModel;
   File? file;
   chooseImage()async{
-    file = await fileUploadGallery(true);
+    file = await fileUploadGallery(false);
     update();
   }
 

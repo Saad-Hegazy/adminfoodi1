@@ -29,6 +29,7 @@ class AppLink {
   static const String viewpendingOrders   = "$server/orders/viewpending.php";
   static const String viweacceptedOrders  = "$server/orders/viweaccepted.php";
   static const String ordersdone  = "$server/orders/ordersdone.php";
+  static const String cancelorder  = "$server/orders/cancelorder.php";
 
   static const String detailsOrders  = "$server/orders/details.php";
 

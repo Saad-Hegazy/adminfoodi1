@@ -80,7 +80,34 @@ class ItemsAdd extends StatelessWidget {
                   isNumber: true),
               CustomTextFormGlobal(
                   hinttext:  "price",
-                  labeltext: "price",
+                  labeltext: "price  for Box",
+                  iconData: Icons.category,
+                  mycontroller:  controlle.pricrofbox,
+                  valid:  (val){
+                    return validInput(val!, 1, 100, "");
+                  },
+                  isNumber: true),
+              CustomTextFormGlobal(
+                  hinttext:  "price",
+                  labeltext: "price  for Box Merchant",
+                  iconData: Icons.category,
+                  mycontroller:  controlle.priceForMerchant,
+                  valid:  (val){
+                    return validInput(val!, 1, 100, "");
+                  },
+                  isNumber: true),
+              CustomTextFormGlobal(
+                  hinttext:  "price",
+                  labeltext: "price  for Box Mosque",
+                  iconData: Icons.category,
+                  mycontroller:  controlle.priceForMosque,
+                  valid:  (val){
+                    return validInput(val!, 1, 100, "");
+                  },
+                  isNumber: true),
+              CustomTextFormGlobal(
+                  hinttext:  "price",
+                  labeltext: "price for unit",
                   iconData: Icons.category,
                   mycontroller:  controlle.price,
                   valid:  (val){
@@ -89,7 +116,7 @@ class ItemsAdd extends StatelessWidget {
                   isNumber: true),
               CustomTextFormGlobal(
                   hinttext:  "price For Merchant",
-                  labeltext: "price For Merchant",
+                  labeltext: "price for unit Merchant",
                   iconData: Icons.category,
                   mycontroller:  controlle.priceForMerchant,
                   valid:  (val){
@@ -98,7 +125,7 @@ class ItemsAdd extends StatelessWidget {
                   isNumber: true),
               CustomTextFormGlobal(
                   hinttext:  "price For Mosque",
-                  labeltext: "price For Mosque",
+                  labeltext: "price for unit Mosque",
                   iconData: Icons.category,
                   mycontroller:  controlle.priceForMosque,
                   valid:  (val){
@@ -140,12 +167,12 @@ class ItemsAdd extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 child: MaterialButton(
-                  color: AppColor.thirdColor,
+                  color: AppColor.primaryColor,
                   textColor: AppColor.secondColor,
                   onPressed: (){
                     controlle.showOptionImage();
                   },child:
-                Text("Choose product Image"),),
+                Text("Choose product Image",style: TextStyle(color: Colors.white),),),
               ),
               if(controlle.file !=null)
                 Image.file(controlle.file!,
