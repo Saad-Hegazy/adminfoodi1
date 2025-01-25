@@ -53,8 +53,8 @@ class CategoriesAdd extends StatelessWidget {
                   },child:
                 Text("Choose Categorie Image",style: TextStyle(color: Colors.white),),),
               ),
-              if(controlle.file !=null)
-                SvgPicture.file(controlle.file!),
+               if(controlle.file !=null)
+                 Image.file(controlle.file!),
               CustomButton(text: "Add",
                 onPressed: (){
                   controlle.addData();

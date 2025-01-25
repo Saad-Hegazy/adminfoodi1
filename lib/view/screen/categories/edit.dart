@@ -53,7 +53,7 @@ class CategoriesEdit extends StatelessWidget {
                 Text("Choose Categorie Image",style: TextStyle(color: Colors.white),),),
               ),
               if(controlle.file !=null)
-                SvgPicture.file(controlle.file!),
+              Image.file(controlle.file!),
               CustomButton(text: "Edit",
                 onPressed: (){
                   controlle.editData();
