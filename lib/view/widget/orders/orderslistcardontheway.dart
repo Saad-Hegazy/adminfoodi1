@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import '../../../controller/orders/ontheway_controller.dart';
 import '../../../controller/orders/orderscompletedView_controller.dart';
 import '../../../core/constant/color.dart';
@@ -27,10 +28,11 @@ class CardOrdersListOnTheWay extends GetView<OnTheWayOrdersController> {
                   const Spacer(),
                   // Text(listdata.ordersDatetime!)
                   Text(
-                    listdata.ordersDatetime!,
-                    style: const TextStyle(
-                        color: AppColor.primaryColor,
-                        fontWeight: FontWeight.bold),
+                    DateFormat('dd-MMM-yyyy').format(
+                      DateTime.parse(listdata.ordersDatetime!,),
+                    ),    style: const TextStyle(
+                      color: AppColor.primaryColor,
+                      fontSize:12),
                   )
                 ],
               ),

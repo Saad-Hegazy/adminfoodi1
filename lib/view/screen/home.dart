@@ -2,21 +2,18 @@ import 'package:adminfoodi1/core/constant/imgaeasset.dart';
 import 'package:adminfoodi1/core/constant/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../controller/home_controller.dart';
 import '../../core/constant/color.dart';
 import '../widget/home/cardadmin.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
-    Get.put(HomeControllerImp());
     return Scaffold(
         backgroundColor: AppColor.backgroundcolor,
         appBar: AppBar(
         title:Text("Home"),
       ),
-      body: GetBuilder<HomeControllerImp>(
-          builder: (controller) => Container(
+      body: Container(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: ListView(
                 children: [
@@ -89,16 +86,27 @@ class HomePage extends StatelessWidget {
                         },
                       ),
                       CardAdminHome(
+                        url: AppImageAsset.canceledorder,
+                        title: 'Orders Canceled By User',
+                        onClick: () {
+                          Get.toNamed(AppRoute.ordersCanceledByUserView);
+                        },
+                      ),
+                      CardAdminHome(
+                        url: AppImageAsset.rejectedorder,
+                        title: 'Rejected Orders',
+                        onClick: () {
+                          Get.toNamed(AppRoute.ordersCanceledByAdminView);
+                        },
+                      ),
+                      CardAdminHome(
                         url: AppImageAsset.settingsImage,
                         title: 'Settings',
                         onClick: () {
                           Get.toNamed(AppRoute.settings);
-                        },
-                      ),
-                    ],)
-
-                ],
-              )))
+                        },),
+                    ],)],
+              ))
     );
   }
 }

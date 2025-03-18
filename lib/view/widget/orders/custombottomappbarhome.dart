@@ -25,15 +25,15 @@ class CustomBottomAppBarHome extends StatelessWidget {
                           controller.changePage(index);
                           switch(index){
                             case 0:
-                              OrdersPendingController controller = Get.put(OrdersPendingController());
+                              OrdersPendingController controller = Get.find<OrdersPendingController>();
                               controller.refrehOrder();
                               break;
                             case 1:
-                              OrdersAcceptedController controller = Get.put(OrdersAcceptedController());
+                              OrdersAcceptedController controller =Get.find<OrdersAcceptedController>();
                               controller.refrehOrder();
                               break;
                             case 2:
-                              OnTheWayOrdersController controller = Get.put(OnTheWayOrdersController());
+                              OnTheWayOrdersController controller =Get.find<OnTheWayOrdersController>();
                               controller.refrehOrder();
                               break;
                           }

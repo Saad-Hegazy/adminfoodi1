@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import '../core/class/statusrequest.dart';
-import '../core/constant/routes.dart';
 import '../core/functions/handingdatacontroller.dart';
 import '../core/services/services.dart';
 import '../data/datasource/remote/orders/notification_data.dart';
-import 'home_controller.dart';
 class NotificationController extends GetxController {
   NotificationData notificationData = NotificationData(Get.find());
   late TextEditingController title;

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import '../../../controller/orders/orderscompletedView_controller.dart';
 import '../../../core/constant/color.dart';
 import 'package:flutter/material.dart';
@@ -28,10 +29,11 @@ class CardOrdersListCompleted extends GetView<OrderscompletedViewController> {
                   const Spacer(),
                   // Text(listdata.ordersDatetime!)
                   Text(
-                    listdata.ordersDatetime!,
-                    style: const TextStyle(
-                        color: AppColor.primaryColor,
-                        fontWeight: FontWeight.bold),
+                    DateFormat('dd-MMM-yyyy').format(
+                      DateTime.parse(listdata.ordersDatetime!,),
+                    ),    style: const TextStyle(
+                      color: AppColor.primaryColor,
+                      fontSize:12),
                   )
                 ],
               ),
@@ -56,7 +58,7 @@ class CardOrdersListCompleted extends GetView<OrderscompletedViewController> {
               Text(
                   "Number of stars : ${listdata.ordersRating!} "),
               CachedNetworkImage(
-                imageUrl: AppLink.imagestOrders + "/" + listdata.ordersdoneimage!,
+                imageUrl: AppLink.imagestOrders + "/" + listdata.ordersDoneImage!,
                 height: 150,
                 width: 250,
               ),

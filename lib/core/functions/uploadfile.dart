@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,19 +14,26 @@ imageUploadCamera()async{
     return null;
   }
 }
-fileUploadGallery([isSvg=false])async{
+
+Future<dynamic> fileUploadGallery([bool isSvg = false]) async {
   FilePickerResult? result = await FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowedExtensions: isSvg ? ["svg", "SVG"]:["png", "PNG", "jpg", "jpeg", "gif"]
+    type: FileType.image,
   );
-  if(result != null){
-    return File(result.files.single.path!);
-  }else{
-    return null;
+
+  if (result != null) {
+    if (kIsWeb) {
+      // On Web: Return `bytes` (Uint8List) and file name as it's the only option available
+      Uint8List? fileBytes = result.files.single.bytes;
+      String fileName = result.files.single.name;
+      return {"bytes": fileBytes, "name": fileName}; // Return both file name and data
+    } else {
+      // On Mobile/Desktop: Return a `File` object using `path`
+      return File(result.files.single.path!); // This is for mobile platforms (Android/iOS)
+    }
+  } else {
+    return null; // No file selected
   }
 }
-
-
 
 showbottommenu(imageUploadCamera(),fileUploadGallery()){
   Get.bottomSheet(

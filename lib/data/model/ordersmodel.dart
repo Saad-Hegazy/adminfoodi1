@@ -2,104 +2,111 @@ class OrdersModel {
   int? ordersId;
   int? ordersUsersid;
   String? ordersUserstype;
-  int? ordersAddress;
+  int? ordersAddressId;
   int? ordersType;
-  num? ordersPricedelivery;
+  int? ordersPricedelivery;
   num? ordersPrice;
   num? ordersTotalprice;
-  int? ordersCoupon;
-  String? ordersNoterating;
+  int? ordersCouponId;
   int? ordersRating;
+  String? ordersNoterating;
   int? ordersPaymentmethod;
   int? ordersStatus;
-  String? ordersdoneimage;
-  int? ordersdeliveryid;
+  String? ordersDoneImage;
+  int? ordersDelivery;
   String? ordersDatetime;
+  num? ordersAddressLat;
+  num? ordersAddressLong;
   int? addressId;
   int? addressUsersid;
   String? addressName;
   String? addressCity;
   String? addressStreet;
-  num? ordersAddressLat;
-  num? ordersAddressLong;
-
+  num? addressLat;
+  num? addressLong;
 
   OrdersModel(
       {this.ordersId,
         this.ordersUsersid,
         this.ordersUserstype,
-        this.ordersAddress,
+        this.ordersAddressId,
         this.ordersType,
         this.ordersPricedelivery,
         this.ordersPrice,
         this.ordersTotalprice,
-        this.ordersCoupon,
-        this.ordersNoterating,
+        this.ordersCouponId,
         this.ordersRating,
+        this.ordersNoterating,
         this.ordersPaymentmethod,
         this.ordersStatus,
-        this.ordersdoneimage,
-        this.ordersdeliveryid,
+        this.ordersDoneImage,
+        this.ordersDelivery,
         this.ordersDatetime,
+        this.ordersAddressLat,
+        this.ordersAddressLong,
         this.addressId,
         this.addressUsersid,
         this.addressName,
         this.addressCity,
         this.addressStreet,
-        this.ordersAddressLat,
-        this.ordersAddressLong});
+        this.addressLat,
+        this.addressLong});
 
   OrdersModel.fromJson(Map<String, dynamic> json) {
     ordersId = json['orders_id'];
     ordersUsersid = json['orders_usersid'];
     ordersUserstype = json['orders_userstype'];
-    ordersAddress = json['orders_address'];
+    ordersAddressId = json['orders_address_id'];
     ordersType = json['orders_type'];
     ordersPricedelivery = json['orders_pricedelivery'];
     ordersPrice = json['orders_price'];
     ordersTotalprice = json['orders_totalprice'];
-    ordersCoupon = json['orders_coupon'];
-    ordersNoterating = json['orders_noterating'];
+    ordersCouponId = json['orders_coupon_id'];
     ordersRating = json['orders_rating'];
+    ordersNoterating = json['orders_noterating'];
     ordersPaymentmethod = json['orders_paymentmethod'];
     ordersStatus = json['orders_status'];
-    ordersdoneimage = json['orders_done_image'];
-    ordersdeliveryid = json['orders_delivery'];
+    ordersDoneImage = json['orders_done_image'];
+    ordersDelivery = json['orders_delivery'];
     ordersDatetime = json['orders_datetime'];
+    ordersAddressLat = json['orders_address_lat'];
+    ordersAddressLong = json['orders_address_long'];
     addressId = json['address_id'];
     addressUsersid = json['address_usersid'];
     addressName = json['address_name'];
     addressCity = json['address_city'];
     addressStreet = json['address_street'];
-    ordersAddressLat = json['orders_address_lat'];
-    ordersAddressLong = json['orders_address_long'];
+    addressLat = json['address_lat'];
+    addressLong = json['address_long'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['orders_id'] = ordersId;
-    data['orders_usersid'] = ordersUsersid;
-    data['orders_userstype'] = ordersUserstype;
-    data['orders_address'] = ordersAddress;
-    data['orders_type'] = ordersType;
-    data['orders_pricedelivery'] = ordersPricedelivery;
-    data['orders_price'] = ordersPrice;
-    data['orders_totalprice'] = ordersTotalprice;
-    data['orders_coupon'] = ordersCoupon;
-    data['orders_noterating'] = ordersNoterating;
-    data['orders_rating'] = ordersRating;
-    data['orders_paymentmethod'] = ordersPaymentmethod;
-    data['orders_status'] = ordersStatus;
-    data['orders_done_image'] = ordersdoneimage;
-    data['orders_delivery'] = ordersdeliveryid;
-    data['orders_datetime'] = ordersDatetime;
-    data['address_id'] = addressId;
-    data['address_usersid'] = addressUsersid;
-    data['address_name'] = addressName;
-    data['address_city'] = addressCity;
-    data['address_street'] = addressStreet;
-    data['orders_address_lat'] = ordersAddressLat;
-    data['orders_address_long'] = ordersAddressLong;
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['orders_id'] = this.ordersId;
+    data['orders_usersid'] = this.ordersUsersid;
+    data['orders_userstype'] = this.ordersUserstype;
+    data['orders_address_id'] = this.ordersAddressId;
+    data['orders_type'] = this.ordersType;
+    data['orders_pricedelivery'] = this.ordersPricedelivery;
+    data['orders_price'] = this.ordersPrice;
+    data['orders_totalprice'] = this.ordersTotalprice;
+    data['orders_coupon_id'] = this.ordersCouponId;
+    data['orders_rating'] = this.ordersRating;
+    data['orders_noterating'] = this.ordersNoterating;
+    data['orders_paymentmethod'] = this.ordersPaymentmethod;
+    data['orders_status'] = this.ordersStatus;
+    data['orders_done_image'] = this.ordersDoneImage;
+    data['orders_delivery'] = this.ordersDelivery;
+    data['orders_datetime'] = this.ordersDatetime;
+    data['orders_address_lat'] = this.ordersAddressLat;
+    data['orders_address_long'] = this.ordersAddressLong;
+    data['address_id'] = this.addressId;
+    data['address_usersid'] = this.addressUsersid;
+    data['address_name'] = this.addressName;
+    data['address_city'] = this.addressCity;
+    data['address_street'] = this.addressStreet;
+    data['address_lat'] = this.addressLat;
+    data['address_long'] = this.addressLong;
     return data;
   }
 }

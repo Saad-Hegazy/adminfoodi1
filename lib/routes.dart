@@ -24,6 +24,8 @@ import 'package:adminfoodi1/view/screen/orders/onthewayorderdetails.dart';
 import 'package:adminfoodi1/view/screen/orders/orderscompletedView.dart';
 import 'package:adminfoodi1/view/screen/orders/pending.dart';
 import 'package:adminfoodi1/view/screen/orders/screen.dart';
+import 'package:adminfoodi1/view/screen/orders/viewcanceledorderbyadmin.dart';
+import 'package:adminfoodi1/view/screen/orders/viewcanceledorderbyuser.dart';
 import 'package:adminfoodi1/view/screen/settings.dart';
 import 'package:adminfoodi1/view/screen/users/addadmin.dart';
 import 'package:adminfoodi1/view/screen/users/adddelivery.dart';
@@ -61,6 +63,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.orderswithdeliveryView, page: () => const OrderswithdeliveryView()),
   GetPage(name: AppRoute.onthewayordersdetails, page: () => const OnTheWayOrdersDetails()),
   GetPage(name: AppRoute.orderscompletedView, page: () => const OrderscompletedView()),
+  GetPage(name: AppRoute.ordersCanceledByUserView, page: () => const OrdersCanceledByUserView()),
+  GetPage(name: AppRoute.ordersCanceledByAdminView, page: () => const OrdersCanceledByAdminView()),
   GetPage(name: AppRoute.settings, page: () => const Settings()),
   // ================================= Users ========================== //
   GetPage(name: AppRoute.adminView, page: () => const AdminView()),

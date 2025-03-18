@@ -9,7 +9,6 @@ import '../../../controller/categories/add_controller.dart';
 import '../../../core/shared/custombutton.dart';
 class CategoriesAdd extends StatelessWidget {
   const CategoriesAdd({super.key});
-
   @override
   Widget build(BuildContext context) {
     CategorieAddController controlle =Get.put(CategorieAddController()) ;
@@ -18,7 +17,6 @@ class CategoriesAdd extends StatelessWidget {
         title: Text("Add Categories"),
       ),
       body: GetBuilder<CategorieAddController>(builder: (controller)=> HandlingDataView(
-
           statusRequest: controller.statusRequest!, widget: Container(
         padding: EdgeInsets.all(10),
         child: Form(

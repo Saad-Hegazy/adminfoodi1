@@ -1,13 +1,18 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import '../../../controller/orders/accepted_controller.dart';
+import '../../../controller/orders/orderscenceledbyadminView_controller.dart';
+import '../../../controller/orders/orderscompletedView_controller.dart';
 import '../../../core/constant/color.dart';
 import 'package:flutter/material.dart';
 import '../../../core/constant/routes.dart';
 import '../../../data/model/ordersmodel.dart';
-class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
+import '../../../linkapi.dart';
+class CardOrdersListCanceledByAdmin extends GetView<OrdersCanceledByAdminController> {
   final OrdersModel listdata;
-  const CardOrdersListAccepted({Key? key, required this.listdata}) : super(key: key);
+
+  const CardOrdersListCanceledByAdmin({Key? key, required this.listdata})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +28,7 @@ class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold)),
                   const Spacer(),
+                  // Text(listdata.ordersDatetime!)
                   Text(
                     DateFormat('dd-MMM-yyyy').format(
                       DateTime.parse(listdata.ordersDatetime!,),
@@ -32,11 +38,17 @@ class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
                   )
                 ],
               ),
-              Divider(),
-              Text("Order Price : ${listdata.ordersPrice?.toStringAsFixed(2)} \S\A\R"),
-              Text("Delivery Price : ${listdata.ordersPricedelivery?.toStringAsFixed(2)} \S\A\R "),
-              Text("Payment Method : ${controller.printPaymentMethod(listdata.ordersPaymentmethod!)}"),
               const Divider(),
+              Text(
+                  "Order Type : ${controller.printOrderType(listdata.ordersType!)}"),
+              Text("Order Price : ${listdata.ordersPrice} \S\A\R"),
+              Text("Delivery Price : ${listdata.ordersPricedelivery} \S\A\R"),
+              Text(
+                  "Payment Method : ${controller.printPaymentMethod(listdata.ordersPaymentmethod!)} "),
+              Text(
+                  "Order Status : ${controller.printOrderStatus(listdata.ordersStatus!)} "),
+              const Divider(),
+
               Text("Total Price : ${listdata.ordersTotalprice!.toStringAsFixed(2)} \S\A\R ",
                   style: const TextStyle(
                       color: AppColor.primaryColor,
@@ -44,28 +56,17 @@ class CardOrdersListAccepted extends GetView<OrdersAcceptedController> {
               Row(
                 children: [
                   const Spacer(),
-                  MaterialButton(
-                    onPressed: () {
-                      Get.toNamed(AppRoute.ordersdetails,
-                          arguments: {"ordersmodel": listdata});
-                    },
-                    color: AppColor.primaryColor,
-                    textColor: AppColor.secondColor,
-                    child: const Text("Details"),
-                  ),
-                  SizedBox(width: 3),
-                  if (listdata.ordersStatus! == 1) MaterialButton(
-                    onPressed: () {
-                      controller.startDeliveres(
-                          listdata.ordersId.toString(),
-                          listdata.ordersUsersid.toString(),
-                          listdata.ordersType.toString(),
-                      );
-                    },
-                    color: AppColor.primaryColor,
-                    textColor: AppColor.secondColor,
-                    child: const Text("Start Delivered"),
-                  )
+                  if (listdata.ordersStatus! == 11)
+                    MaterialButton(
+                      onPressed: () {
+                        Get.toNamed(AppRoute.onthewayordersdetails,
+                            arguments: {"ordersmodel": listdata});
+                      },
+                      color: AppColor.primaryColor,
+                      textColor: AppColor.secondColor,
+                      child: const Text("Details"),
+                    ),
+
                 ],
               ),
             ],

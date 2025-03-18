@@ -4,14 +4,11 @@ import '../../core/class/statusrequest.dart';
 import '../../core/functions/handingdatacontroller.dart';
 import '../../data/datasource/remote/categories_data.dart';
 import '../../data/model/categoriesmodel.dart';
-
 class  CategorieController extends GetxController{
-
   CategoriesData  categorieData = CategoriesData(Get.find());
-
   List<CategoriesModel> data = [];
-
   late StatusRequest statusRequest ;
+
   getData()async{
     data.clear();
     statusRequest=StatusRequest.loading;
@@ -28,15 +25,18 @@ class  CategorieController extends GetxController{
     }
     update();
   }
+
   deleteCategory(String id, String imagename){
     categorieData.delete({"id": id, "imagename": imagename,});
     data.removeWhere((element)=> element.categoriesId == id);
     refreshData();
     update();
   }
+
   refreshData(){
     getData();
   }
+
   goToPageEdit(CategoriesModel categoriesModel){
     Get.toNamed(AppRoute.categoriesedit,arguments: {
       'categoriesModel':categoriesModel

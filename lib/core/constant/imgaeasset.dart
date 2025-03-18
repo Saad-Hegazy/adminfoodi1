@@ -8,6 +8,8 @@ class AppImageAsset {
 
 
   static const String orderscompleted  = "$rootImages/orderscompleted.png" ;
+  static const String canceledorder  = "$rootImages/canceledorder.png" ;
+  static const String rejectedorder  = "$rootImages/rejectedorder.png" ;
 
 
 

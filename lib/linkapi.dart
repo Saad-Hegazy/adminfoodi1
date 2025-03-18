@@ -1,6 +1,6 @@
 class AppLink {
-  static  const String server = "https://foodi1.com/foodi1backend/admin";
-  static  const String serverMain = "https://endpoin.shop/ecommerce";
+  static  const String server = "https://foodi1.com/backendfoodi1/admin";
+  static  const String serverMain = "https://foodi1.com/backendfoodi1";
   static  const String test = "$server/test.php";
   static  const String imageststatic = "$serverMain/upload";
 //========================== Image ============================
@@ -18,9 +18,6 @@ class AppLink {
   static const String checkEmail = "$server/forgetpassword/checkemail.php";
   static const String resetPassword = "$server/forgetpassword/resetpassword.php";
   static const String verifycodeforgetpassword = "$server/forgetpassword/verifycode.php";
-// ================================= Home ========================== //
-  static const String homepage = "$serverMain/home.php";
-
 // ================================= Orders ========================== //
   static const String approveOrders  = "$server/orders/approve.php";
   static const String OntheWayOrders  = "$server/orders/ordersontheway.php";
@@ -29,21 +26,17 @@ class AppLink {
   static const String viewpendingOrders   = "$server/orders/viewpending.php";
   static const String viweacceptedOrders  = "$server/orders/viweaccepted.php";
   static const String ordersdone  = "$server/orders/ordersdone.php";
+  static const String viewcanceledorderbyuser  = "$server/orders/viewcanceledorderbyuser.php";
+  static const String viewcanceledorderbyadmin  = "$server/orders/viewcanceledorderbyadmin.php";
   static const String cancelorder  = "$server/orders/cancelorder.php";
-
   static const String detailsOrders  = "$server/orders/details.php";
-
   static const String startDliveredOrders  = "$server/orders/prepare.php";
-
   static const String customerdetails  = "$serverMain/orders/customerdetails.php";
-
 // ================================= Categoties ========================== //
   static const String cegoriesview = "$server/categories/view.php";
   static const String cegoriesadd = "$server/categories/add.php";
   static const String cegoriesedit = "$server/categories/edit.php";
   static const String cegoriesdelete = "$server/categories/delete.php";
-
-
 // ================================= Items ========================== //
   static const String itemsview = "$server/items/view.php";
   static const String itemsadd = "$server/items/add.php";

@@ -16,6 +16,8 @@ class AppRoute {
   static const String ordersScreen = "/ordersScreen";
   static const String orderswithdeliveryView = "/orderswithdeliveryView";
   static const String orderscompletedView = "/orderscompletedView";
+  static const String ordersCanceledByUserView = "/ordersCanceledByUserView";
+  static const String ordersCanceledByAdminView = "/ordersCanceledByAdminView";
   //categories
   static const String categoriesview = "/categories";
   static const String categoriesadd = "/categoriesadd";

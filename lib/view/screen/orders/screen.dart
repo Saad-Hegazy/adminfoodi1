@@ -16,7 +16,6 @@ class OrderScreen extends StatelessWidget {
           ),
           bottomNavigationBar: const CustomBottomAppBarHome(),
           body:  controller.listPage.elementAt(controller.currentpage),
-
         ));
   }
 }

@@ -4,8 +4,8 @@ import '../../../../linkapi.dart';
 class OrdersDetailsData {
   Crud crud;
   OrdersDetailsData(this.crud);
-  getData(String ordersid, String userstype) async {
-    var response = await crud.postData(AppLink.detailsOrders, {"ordersid": ordersid, "userstype" : userstype });
+  getData(String ordersid) async {
+    var response = await crud.postData(AppLink.detailsOrders, {"ordersid": ordersid });
     return response.fold((l) => l, (r) => r);
   }
   customerData(String customerid) async {

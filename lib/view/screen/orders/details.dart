@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -5,6 +6,9 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../controller/orders/details_controller.dart';
 import '../../../core/class/handlingdataview.dart';
 import '../../../core/constant/color.dart';
+import '../../../core/functions/translatefatabase.dart';
+import '../../../core/functions/truncatetext.dart';
+import '../../../linkapi.dart';
 
 class OrdersDetails extends StatelessWidget {
   const OrdersDetails({super.key});
@@ -34,6 +38,11 @@ class OrdersDetails extends StatelessWidget {
                           Table(
                             children: [
                               TableRow(children: [
+                                Text("Image",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                        color: AppColor.primaryColor,
+                                        fontWeight: FontWeight.bold)),
                                 Text("Item",
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
@@ -53,11 +62,33 @@ class OrdersDetails extends StatelessWidget {
                               ...List.generate(
                                   controller.data.length,
                                       (index) => TableRow(children: [
-                                    Text("${controller.data[index].itemsName}",
-                                        textAlign: TextAlign.center),
-                                    Text("${controller.data[index].countitems} ${ controller.data[index].cartitemisbox.toString()==1? "Box":"Unit"} ", textAlign: TextAlign.center),
-                                    Text("${controller.data[index].cartitemisbox.toString()==1?controller.data[index].cartitemprice!.toInt() * controller.data[index].itemsquantityinbox!.toInt() : controller.data[index].cartitemprice!.toStringAsFixed(2)}",
-                                        textAlign: TextAlign.center),
+                                        CachedNetworkImage(
+                                          imageUrl: "${AppLink.imagestItems}/${controller.data[index]["items_image"]}",
+                                          height: 80,
+                                          width: 80,
+                                          fit: BoxFit.cover,// Ensure image fits within the space
+                                          alignment : Alignment. center,
+                                          placeholder: (context, url) => CircularProgressIndicator(
+                                            color: AppColor.primaryColor,
+                                          ),
+                                          errorWidget: (context, url, error) => Icon(Icons.error, color: Colors.red),
+                                        ),
+                                        Text(
+                                          translateDatabase(
+                                            truncateProductName(controller.data[index]["items_name_ar"].toString()),
+                                            truncateProductName(controller.data[index]["items_name"].toString()),
+                                          ),
+                                          style: TextStyle(
+                                            color: AppColor.black,
+                                            fontSize: 14, // Adjust font size for readability
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                          overflow: TextOverflow.ellipsis, // Handle long text
+                                        ),
+                                        Text("${controller.data[index]["item_quantity"]} ${controller.data[index]["item_unit"]==0?"Unit":"Box"}", textAlign: TextAlign.center),
+                                        Text(controller.data[index]["total_price"].toStringAsFixed(2),
+                                            textAlign: TextAlign.center),
                                   ]))
                             ],
                           ),
@@ -104,7 +135,7 @@ class OrdersDetails extends StatelessWidget {
                         markers: controller.markers.toSet(),
                         initialCameraPosition: controller.cameraPosition!,
                         onMapCreated: (GoogleMapController controllermap) {
-                          controller.completercontroller!
+                          controller.completercontroller
                               .complete(controllermap);
                         },
                       ),
